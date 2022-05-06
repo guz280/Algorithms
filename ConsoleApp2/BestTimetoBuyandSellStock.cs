@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
+
 	public static class BestTimetoBuyandSellStock
 	{
 		// You are given an array prices where prices[i] is the price of a given stock on the ith day.
