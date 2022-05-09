@@ -59,18 +59,18 @@ namespace Algorithms
         int Diameter() { return Diameter(root); }
 
         // Driver Code
-        public static void Main(string[] args)
-        {
+        //public static void Main(string[] args)
+        //{
 
-            // creating a binary tree and entering the nodes
-            TreeDiameter tree = new TreeDiameter();
-            tree.root = new Tree<int>(1);
-            tree.root.left = new Tree<int>(2);
-            tree.root.right = new Tree<int>(3);
-            tree.root.left.left = new Tree<int>(4);
-            tree.root.left.right = new Tree<int>(5);
+        //    // creating a binary tree and entering the nodes
+        //    TreeDiameter tree = new TreeDiameter();
+        //    tree.root = new Tree<int>(1);
+        //    tree.root.left = new Tree<int>(2);
+        //    tree.root.right = new Tree<int>(3);
+        //    tree.root.left.left = new Tree<int>(4);
+        //    tree.root.left.right = new Tree<int>(5);
 
-            Console.WriteLine($"The diameter of given binary tree is : {tree.Diameter()}");
-        }
+        //    Console.WriteLine($"The diameter of given binary tree is : {tree.Diameter()}");
+        //}
     }
 }
