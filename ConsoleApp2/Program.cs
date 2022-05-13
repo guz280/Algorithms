@@ -58,7 +58,7 @@ namespace ConsoleApp2
 			//************************************************************************************************************/
 
 			//// creating a binary tree and entering the nodes
-			Algorithms.TreeDiameter tree = new Algorithms.TreeDiameter();
+			//Algorithms.TreeDiameter tree = new Algorithms.TreeDiameter();
 			//tree.root = new Algorithms.Tree<int>(1);
 			//tree.root.left = new Algorithms.Tree<int>(2);
 			//tree.root.right = new Algorithms.Tree<int>(3);
@@ -215,9 +215,14 @@ namespace ConsoleApp2
 			//************************************************************************************************************/
 
 
-			////int[] prices = new int[] { 7, 1, 5, 3, 6, 4 };
-			//int[] prices = new int[] { 7, 6, 4, 3, 1 };
+			//int[] prices = new int[] { 7, 1, 5, 3, 6, 4 };
+			////int[] prices = new int[] { 7, 6, 4, 3, 1 };
 			//var result = BestTimetoBuyandSellStock.MaxProfit(prices);
+
+			int[] prices = new int[] { 7, 1, 5, 3, 6, 4 };
+			//int[] prices = new int[] { 7, 6, 4, 3, 1 };
+			//var result = BestTimetoBuyandSellStock.BruteForce(prices);
+			var result = BestTimetoBuyandSellStock.MaxProfit_BetterSolution(prices);
 
 
 			//************************************************************************************************************/
@@ -227,7 +232,7 @@ namespace ConsoleApp2
 
 			//// very difficult to understand it 
 			//// TRIE https://www.geeksforgeeks.org/trie-insert-and-search/
-			//WordDictionary wordDictionary = new WordDictionary();
+			WordDictionary wordDictionary = new WordDictionary();
 			//wordDictionary.AddWord("bad");
 			//wordDictionary.AddWord("dad");
 			//wordDictionary.AddWord("mad");

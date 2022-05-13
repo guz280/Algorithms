@@ -19,13 +19,16 @@ namespace ConsoleApp2
             List<int> resultList = new List<int>();
             for (int i = 1; i <= n; i++)
             {
-
+                // If curr_sum exceeds
+                // the sum, then remove
+                // the starting elements
                 while (sum > s && start < i - 1)
                 {
                     sum = sum - arr[start];
                     start++;
                 }
-
+                // If curr_sum becomes equal to
+                // sum, then return true
                 if (sum == s)
                 {
                     resultList.Add(start + 1);

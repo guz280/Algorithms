@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-
+	// https://www.geeksforgeeks.org/stock-buy-sell/
+	// https://www.gyanblog.com/coding-interview/leetcode-solution-best-time-buy-sell-stock-1/#:~:text=You%20are%20given%20an%20array,can%20achieve%20from%20this%20transaction.
 	public static class BestTimetoBuyandSellStock
 	{
 		// You are given an array prices where prices[i] is the price of a given stock on the ith day.
@@ -34,7 +35,7 @@ namespace ConsoleApp2
 			// sbtract them and return value
 
 			Dictionary<int, int> dict = new Dictionary<int, int>();
-			for(int i = 0; i < prices.Length; i++)
+			for (int i = 0; i < prices.Length; i++)
 			{
 				dict.Add(prices[i], i);
 			}
@@ -44,13 +45,13 @@ namespace ConsoleApp2
 
 			int lowestPrice = prices[0];
 
-			
+
 
 			dict.TryGetValue(lowestPrice, out int lowestPricePosition);
-			
 
 
-			for(int i = prices.Length -1; i >= 0; i--)
+
+			for (int i = prices.Length - 1; i >= 0; i--)
 			{
 				int highestPrice = prices[i];
 				dict.TryGetValue(highestPrice, out int highestPricePosition);
@@ -63,5 +64,45 @@ namespace ConsoleApp2
 
 			return 0;
 		}
+
+
+		//Brute Force - O(n^2)
+		public static int BruteForce(int[] prices)
+		{
+			int maxProfit = 0;
+
+			for(int i = 0; i < prices.Length - 1; i ++)
+			{
+				for(int j = i+1; j < prices.Length; j++)
+				{
+					int diff = prices[j] - prices[i];
+					if(diff > maxProfit)
+					{
+						maxProfit = diff;
+					}
+				}
+			}
+			return maxProfit;
+		}
+
+
+		//Better Solution O(n) 
+		public static int MaxProfit_BetterSolution(int[] prices)
+		{
+			int maxProfit = 0;
+
+			int minPrice = prices[0];
+
+			for(int i = 0; i < prices.Length; i++)
+			{
+				maxProfit = Math.Max(maxProfit, prices[i] - minPrice);
+				minPrice = Math.Min(minPrice, prices[i]);
+			}
+
+			return maxProfit;
+		}
 	}
+	
+
+	
 }
