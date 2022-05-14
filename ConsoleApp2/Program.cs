@@ -89,10 +89,11 @@ namespace ConsoleApp2
 			//************************************************************************************************************/
 			//************************************************************************************************************/
 
-			//var t = ReorganizeStringClass.ReorganizeString("bbaaa");
+			var t = ReorganizeStringClass.ReorganizeString("bbaaa");
 			//var t1 = ReorganizeStringClass.ReorganizeString("bbabaaaa");
 			//var t2 = ReorganizeStringClass.ReorganizeString("bbab");
-			//Console.WriteLine(t);
+			var t2 = ReorganizeStringClass.ReorganizeStringV2_Better("bbaaa");
+			Console.WriteLine(t2);
 
 			//************************************************************************************************************/
 			//************************************************************************************************************/

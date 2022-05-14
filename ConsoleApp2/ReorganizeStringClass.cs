@@ -8,6 +8,7 @@ namespace ConsoleApp2
 {
 	public static class ReorganizeStringClass
 	{
+        // https://leetcode.com/problems/reorganize-string/
         // Given a string s, rearrange the characters of s so that any two adjacent characters are not the same.
         // Return any possible rearrangement of s or return "" if not possible.
         public static string ReorganizeString(string s)
@@ -67,5 +68,76 @@ namespace ConsoleApp2
             return resultString;
 
         }
+
+
+
+
+
+
+
+
+
+        public static string ReorganizeStringV2_Better(string s)
+		{
+            Dictionary<char, int> dict= new Dictionary<char, int>();
+
+            for(int i=0; i < s.Length; i++)
+			{
+                dict.TryGetValue(s[i], out int count);
+                if(count > 0) // it exist
+				{
+                    count++;
+                    dict[s[i]] = count;
+				}
+				else
+				{
+                    dict.Add(s[i], 1);
+				}
+			}
+
+            // order dictionary by descending order
+            Dictionary<char, int> sortedDict = new Dictionary<char, int>();
+            foreach(KeyValuePair<char, int> c in dict.OrderByDescending(key => key.Value))
+			{
+                sortedDict.Add(c.Key, c.Value);
+			}
+
+
+            // loop through the dictionary and add to a new array
+            char[] newString = new char[s.Length];
+
+            int startPos = 0;
+            int initial = 1;
+            foreach(KeyValuePair<char, int> c in sortedDict)
+			{
+
+                newString[startPos] = c.Key;
+                for (int i = 1; i < c.Value; i++)
+                {
+                    if (c.Value > 0)
+                    {
+                        startPos = startPos + 2;
+                        newString[startPos] = c.Key;
+                    }
+                }
+                startPos = initial;
+			}
+
+            string output = "";
+            for(int i =0; i < newString.Length; i++)
+			{
+                output = output + newString[i];
+			}
+
+
+            return output;
+
+		}
+
+
+
+
+
+
     }
 }
