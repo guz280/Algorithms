@@ -107,20 +107,21 @@ namespace ConsoleApp2
             char[] newString = new char[s.Length];
 
             int startPos = 0;
-            int initial = 1;
+            int initial = 0;
             foreach(KeyValuePair<char, int> c in sortedDict)
 			{
 
                 newString[startPos] = c.Key;
-                for (int i = 1; i < c.Value; i++)
-                {
-                    if (c.Value > 0)
+                if(c.Value > 0)
+				{
+                    for (int i = 1; i < c.Value; i++)
                     {
                         startPos = startPos + 2;
                         newString[startPos] = c.Key;
                     }
                 }
-                startPos = initial;
+                
+                startPos = initial + 1;
 			}
 
             string output = "";
