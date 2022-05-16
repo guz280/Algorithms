@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
+	// O(2^n) 
 	public static class Fibonacci
 	{
 		public static int FibonacciDynamic(int n)

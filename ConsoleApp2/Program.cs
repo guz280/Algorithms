@@ -1,11 +1,16 @@
-﻿using System;
+﻿using Algorithms;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ConsoleApp2
 {
-    internal class Program
+	//
+	// https://leetcode.com/discuss/interview-question/488887/Amazon-Final-Interview-Questions-or-SDE1
+	//
+
+	internal class Program
     {
 		static void Main(string[] args)
 		{
@@ -89,11 +94,11 @@ namespace ConsoleApp2
 			//************************************************************************************************************/
 			//************************************************************************************************************/
 
-			var t = ReorganizeStringClass.ReorganizeString("bbaaa");
-			//var t1 = ReorganizeStringClass.ReorganizeString("bbabaaaa");
-			//var t2 = ReorganizeStringClass.ReorganizeString("bbab");
-			var t2 = ReorganizeStringClass.ReorganizeStringV2_Better("bbaaa");
-			Console.WriteLine(t2);
+			//var t = ReorganizeStringClass.ReorganizeString("bbaaa");
+			////var t1 = ReorganizeStringClass.ReorganizeString("bbabaaaa");
+			////var t2 = ReorganizeStringClass.ReorganizeString("bbab");
+			//var t2 = ReorganizeStringClass.ReorganizeStringV2_Better("bbaaa");
+			//Console.WriteLine(t2);
 
 			//************************************************************************************************************/
 			//************************************************************************************************************/
@@ -217,13 +222,13 @@ namespace ConsoleApp2
 
 
 			//int[] prices = new int[] { 7, 1, 5, 3, 6, 4 };
-			////int[] prices = new int[] { 7, 6, 4, 3, 1 };
-			//var result = BestTimetoBuyandSellStock.MaxProfit(prices);
+			//////int[] prices = new int[] { 7, 6, 4, 3, 1 };
+			////var result = BestTimetoBuyandSellStock.MaxProfit(prices);
 
-			int[] prices = new int[] { 7, 1, 5, 3, 6, 4 };
-			//int[] prices = new int[] { 7, 6, 4, 3, 1 };
-			//var result = BestTimetoBuyandSellStock.BruteForce(prices);
-			var result = BestTimetoBuyandSellStock.MaxProfit_BetterSolution(prices);
+			//int[] prices = new int[] { 7, 1, 5, 3, 6, 4 };
+			////int[] prices = new int[] { 7, 6, 4, 3, 1 };
+			////var result = BestTimetoBuyandSellStock.BruteForce(prices);
+			//var result = BestTimetoBuyandSellStock.MaxProfit_BetterSolution(prices);
 
 
 			//************************************************************************************************************/
@@ -233,7 +238,7 @@ namespace ConsoleApp2
 
 			//// very difficult to understand it 
 			//// TRIE https://www.geeksforgeeks.org/trie-insert-and-search/
-			WordDictionary wordDictionary = new WordDictionary();
+			//WordDictionary wordDictionary = new WordDictionary();
 			//wordDictionary.AddWord("bad");
 			//wordDictionary.AddWord("dad");
 			//wordDictionary.AddWord("mad");
@@ -267,8 +272,44 @@ namespace ConsoleApp2
 			//         var r2 = Fibonacci.FibonacciDynamic(n);
 
 
+			//************************************************************************************************************/
+			//************************************************************************************************************/
+			//************************************************************************************************************/
+
+			//string[,] islands = new string[4, 5]
+			//{
+			//	{ "1", "1", "1", "1", "0" },
+			//	{ "1", "1", "0", "1", "0" },
+			//	{ "1", "1", "0", "0", "0" },
+			//	{ "0", "0", "0", "0", "0" }
+			//};
 
 
+			char[][] islands =
+				{
+				"11000".ToArray(),
+				"11000".ToArray(),
+				"00100".ToArray(),
+				"00011".ToArray()
+			};
+
+
+			//char[][] islands =
+			//	{
+			//	"11110".ToArray(),
+			//	"11010".ToArray(),
+			//	"11000".ToArray(),
+			//	"00000".ToArray()
+			//};
+			NumberOfIslands numberOfIslands = new NumberOfIslands();
+			var retNumber = numberOfIslands.NumIslands(islands);
+			Console.WriteLine(retNumber);
+
+
+
+			//************************************************************************************************************/
+			//************************************************************************************************************/
+			//************************************************************************************************************/
 		}
 
 
