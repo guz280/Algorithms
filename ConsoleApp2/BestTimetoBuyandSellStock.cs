@@ -66,6 +66,37 @@ namespace ConsoleApp2
 		}
 
 
+		public static int MaxProfit_Mine(int[] prices)
+		{
+			int min = prices[0];
+			int minPosition = 0;
+			for(int i = 1; i < prices.Length; i++)
+			{
+				if(prices[i] < min)
+				{
+					min = prices[i];
+					minPosition = i;
+				}
+			}
+
+			int max = prices[minPosition + 1];
+			int maxPosition = minPosition + 1;
+
+
+			for(int i = minPosition+1; i< prices.Length; i++)
+			{
+				if(prices[i] > max)
+				{
+					max = prices[i];
+					maxPosition = i;
+				}
+			}
+
+			// difference
+			return prices[maxPosition] - prices[minPosition];
+
+		}
+
 		//Brute Force - O(n^2)
 		public static int BruteForce(int[] prices)
 		{
