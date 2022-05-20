@@ -9,6 +9,9 @@ namespace ConsoleApp2
 	public static class LevelOrderTraversal
 	{
 		//https://leetcode.com/problems/binary-tree-level-order-traversal/
+		//Given the root of a binary tree, return the level order traversal of its nodes'
+		//values. (i.e., from left to right, level by level).
+
 		// I have issue with the return because it is IList<IList<int>> no idea what it is
 		public static List<int> LevelOrder(TreeNode root)
 		{
@@ -22,9 +25,9 @@ namespace ConsoleApp2
 
 
 			var height = Height(root);
-			for(int i = 0; i <= height; i++)
+			for(int i = 1; i <= height; i++)
 			{
-				levels = PrintCurrentLevel(levels, root, i+1);
+				levels = PrintCurrentLevel(levels, root, i);
 			}
 
 
@@ -39,7 +42,7 @@ namespace ConsoleApp2
 
 			else
 			{
-				//compute height
+				//compute height of each subtree
 				int lHeight = Height(root.left);
 				int rHeight = Height(root.right);
 
@@ -50,12 +53,12 @@ namespace ConsoleApp2
 				}
 				else 
 				{ 
-					return lHeight + 1; 
+					return rHeight + 1; 
 				}	
 			}
 		}
 
-
+		/* Print nodes at the current level */
 		public static List<int> PrintCurrentLevel(List<int> levels, TreeNode root, int level)
 		{
 			if(root == null)
@@ -64,7 +67,7 @@ namespace ConsoleApp2
 			}
 			if(level == 1)
 			{
-				levels.Add(root.val);
+				levels.Add(root.val); //Console.Write(root.data + " ");
 			}
 			else if (level > 1)
 			{
@@ -73,5 +76,14 @@ namespace ConsoleApp2
 			}
 			return levels;
 		}
+
+
+
+
+
+
+
+
+		
 	}
 }

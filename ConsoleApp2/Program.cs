@@ -95,10 +95,11 @@ namespace ConsoleApp2
 			//************************************************************************************************************/
 
 			//var t = ReorganizeStringClass.ReorganizeString("bbaaa");
-			////var t1 = ReorganizeStringClass.ReorganizeString("bbabaaaa");
-			////var t2 = ReorganizeStringClass.ReorganizeString("bbab");
-			//var t2 = ReorganizeStringClass.ReorganizeStringV2_Better("bbaaa");
-			//Console.WriteLine(t2);
+			//var t1 = ReorganizeStringClass.ReorganizeString("bbabaaaa");
+			//var t2 = ReorganizeStringClass.ReorganizeString("bbab");
+			var t2 = ReorganizeStringClass.ReorganizeString("bbabaaaa");
+			//var t2 = ReorganizeStringClass.ReorganizeStringV2_Better("bbabaaaa");
+			Console.WriteLine(t2);
 
 			//************************************************************************************************************/
 			//************************************************************************************************************/
@@ -134,17 +135,15 @@ namespace ConsoleApp2
 			//************************************************************************************************************/
 			//************************************************************************************************************/
 
+			BinaryTree2 tree2 = new BinaryTree2();
+			tree2.root = new Node(4);
+			tree2.root.left = new Node(2);
+			tree2.root.right = new Node(5);
+			tree2.root.left.left = new Node(1);//put 10 as value is not BST
+			tree2.root.left.right = new Node(3);
 
 
-			//BinaryTree2 tree2 = new BinaryTree2();
-			//tree2.root = new Node(4);
-			//tree2.root.left = new Node(2);
-			//tree2.root.right = new Node(5);
-			//tree2.root.left.left = new Node(1);//put 10 as value is not BST
-			//tree2.root.left.right = new Node(3);
-
-
-			//var t = BinaryTree3.isBST(tree2.root);
+			var t5 = BinaryTree3.isBST(tree2.root);
 
 
 			//************************************************************************************************************/
@@ -207,15 +206,18 @@ namespace ConsoleApp2
 
 
 
-			//TreeNode treeNode = new TreeNode(3);
-			//treeNode.left = new TreeNode(9);
-			//treeNode.right = new TreeNode(20);
-			//treeNode.right.left = new TreeNode(15);
-			//treeNode.right.right = new TreeNode(7);
+			TreeNode treeNode = new TreeNode(3);
+			treeNode.left = new TreeNode(9);
+			treeNode.left.left = new TreeNode(4);
+			treeNode.left.right = new TreeNode(11);
+			treeNode.left.left.left = new TreeNode(3);
+			treeNode.left.left.right = new TreeNode(13);
+			treeNode.right = new TreeNode(20);
+			treeNode.right.left = new TreeNode(15);
+			treeNode.right.right = new TreeNode(7);
 
 
-			//var result = LevelOrderTraversal.LevelOrder(treeNode);
-
+			var result = LevelOrderTraversal.LevelOrder(treeNode);
 			//************************************************************************************************************/
 			//************************************************************************************************************/
 			//************************************************************************************************************/
@@ -225,9 +227,9 @@ namespace ConsoleApp2
 			//////int[] prices = new int[] { 7, 6, 4, 3, 1 };
 			////var result = BestTimetoBuyandSellStock.MaxProfit(prices);
 
-			//int[] prices = new int[] { 7, 1, 5, 3, 6, 4 };
+			int[] prices = new int[] { 7, 1, 5, 3, 6, 4 };
 			////int[] prices = new int[] { 7, 6, 4, 3, 1 };
-			////var result = BestTimetoBuyandSellStock.BruteForce(prices);
+			var resultr = BestTimetoBuyandSellStock.BruteForce(prices);
 			//var result = BestTimetoBuyandSellStock.MaxProfit_BetterSolution(prices);
 
 
@@ -301,10 +303,21 @@ namespace ConsoleApp2
 			//	"11000".ToArray(),
 			//	"00000".ToArray()
 			//};
-			NumberOfIslands numberOfIslands = new NumberOfIslands();
-			var retNumber = numberOfIslands.NumIslands(islands);
-			Console.WriteLine(retNumber);
+			//NumberOfIslands numberOfIslands = new NumberOfIslands();
+			//var retNumber = numberOfIslands.NumIslands(islands);
+			//Console.WriteLine(retNumber);
 
+
+
+			int[] arr1 = new int[3] { 1, 1, 0 };
+			int[] arr2 = new int[3] { 1, 1, 0 };
+			int[] arr3 = new int[3] { 0, 0, 1 };
+			int[][] provinces =
+				{
+				arr1,arr2, arr3
+			};
+			NumberofProvinces numberOfProvinces = new NumberofProvinces();
+			var ret = numberOfProvinces.FindCircleNum(provinces);
 
 
 			//************************************************************************************************************/

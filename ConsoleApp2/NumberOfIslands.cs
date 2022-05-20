@@ -36,7 +36,7 @@ namespace Algorithms
             // or the current cell is visited  grid[i][j] == '0'
             // or we are at the bottom of the grid j == grid[i].Length
             // Not processed skip and return count 0 
-            if (i < 0 || j < 0 || i == grid.Length || j == grid[i].Length || grid[i][j] == '0')
+            if (i < 0 || j < 0 || i >= grid.Length || j >= grid[i].Length || grid[i][j] == '0')
                 return 0;
             // else process
             grid[i][j] = '0';  // sink current or turn current to visited

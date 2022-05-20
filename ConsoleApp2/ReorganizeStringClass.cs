@@ -14,7 +14,7 @@ namespace ConsoleApp2
         public static string ReorganizeString(string s)
         {
             Dictionary<char, int> dict = new Dictionary<char, int>();
-            Dictionary<char, int> dict2 = new Dictionary<char, int>();
+            Dictionary<char, int> sortedDict = new Dictionary<char, int>();
 
             for (int i = 0; i < s.Length; i++)
             {
@@ -33,30 +33,53 @@ namespace ConsoleApp2
 
             foreach (KeyValuePair<char, int> pait in dict.OrderByDescending(key => key.Value))
             {
-                dict2.Add(pait.Key, pait.Value);
+                sortedDict.Add(pait.Key, pait.Value);
             }
 
             char[] newString = new char[s.Length];
 
             int startPos = 0;
             int initial = 0;
-            foreach (char c in dict2.Keys)
-            {
-                startPos = initial;
-                dict.TryGetValue(c, out int count);
-                newString[initial] = c;
-                startPos++;
-                for (int i = 1; i < count; i++)
+
+
+            foreach(KeyValuePair<char, int> kvp in sortedDict)
+			{
+                newString[startPos] = kvp.Key;
+
+
+                for (int i = 1; i < kvp.Value; i++)
                 {
-                    if (startPos + 1 < s.Length)
+
+                    startPos = startPos + 2;
+                    if (startPos < s.Length)
                     {
-                        newString[startPos + 1] = c;
-                        startPos += 2;
+                        newString[startPos] = kvp.Key;
                     }
-                    else { return "not possible"; }
+                    else
+                    {
+                        return "Not Possible dude";
+                    }
                 }
-                initial++;
+                startPos = initial + 1;
             }
+
+            //foreach (char c in dict2.Keys)
+            //{
+            //    startPos = initial;
+            //    dict.TryGetValue(c, out int count);
+            //    newString[initial] = c;
+            //    startPos++;
+            //    for (int i = 1; i < count; i++)
+            //    {
+            //        if (startPos + 1 < s.Length)
+            //        {
+            //            newString[startPos + 1] = c;
+            //            startPos += 2;
+            //        }
+            //        else { return "not possible"; }
+            //    }
+            //    initial++;
+            //}
 
             string resultString = "";
             for (int i = 0; i < newString.Length; i++)
